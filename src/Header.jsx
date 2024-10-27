@@ -5,6 +5,7 @@ export default function Header() {
   return (
     <header>
       <BackgroundImage />
+
       <H1 />
     </header>
   );

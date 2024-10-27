@@ -1,3 +1,3 @@
 export default function H1() {
-  <h1>Word Analytics</h1>;
+  return <h1>Word Analytics</h1>;
 }
