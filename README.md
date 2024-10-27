@@ -2,4 +2,6 @@
 
 Word Press Project
 
-Word Press project in which i will be practicing some React !
+Will give analytics about what we wrote
+
+- how many words , how many characters , how many words for instagram and facebook subject field left
