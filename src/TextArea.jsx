@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function TextArea() {
-  // text is the state variable, what it begins with 
+  // text is the state variable, what it begins with
   const [text, setText] = useState("");
 
   return (
@@ -13,6 +13,8 @@ export default function TextArea() {
       onChange={(e) => {
         // we are updating the state of the text, with value of text area
         // runs when any text is inputted
+        console.log("onChange event fired");
+        console.log(e.target.value);
         const newText = e.target.value;
         setText(newText);
       }}
