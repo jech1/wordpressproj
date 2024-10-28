@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Warning from "./Warning";
 
-export default function TextArea() {
+export default function TextArea(
+  // destructuring the props
+  { text, setText }
+) {
   // text is the state variable, what it begins with
-  const [text, setText] = useState("");
   const [warningText, setWarningText] = useState("");
 
   // we are making this into a controlled component
