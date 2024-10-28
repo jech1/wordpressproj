@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Warning from "./Warning";
 
 export default function TextArea() {
   // text is the state variable, what it begins with
@@ -20,15 +21,17 @@ export default function TextArea() {
   };
 
   return (
-    <textarea
-      //uses text to initialize the value of the textarea
-      // empty string
-      value={text}
-      // we are making this into a controlled component
-      onChange={handleChange}
-      className="textarea"
-      placeholder="Enter your text here"
-      spellCheck="false"
-    />
+    <div className="textarea">
+      <textarea
+        //uses text to initialize the value of the textarea
+        // empty string
+        value={text}
+        // we are making this into a controlled component
+        onChange={handleChange}
+        placeholder="Enter your text here"
+        spellCheck="false"
+      />
+      <Warning />
+    </div>
   );
 }
