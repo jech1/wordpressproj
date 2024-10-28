@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export default function Stats({ stats }) {
   // making this reusable component
   return (
@@ -11,6 +12,7 @@ export default function Stats({ stats }) {
 }
 
 //making new component for the stats
+// eslint-disable-next-line react/prop-types
 function Stat({ label, number }) {
   return (
     <section className="stat">
