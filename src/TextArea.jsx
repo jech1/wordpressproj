@@ -4,7 +4,6 @@ import Warning from "./Warning";
 export default function TextArea() {
   // text is the state variable, what it begins with
   const [text, setText] = useState("");
-  const [showWarning, setshowWarning] = useState(false);
   const [warningText, setWarningText] = useState("");
 
   // we are making this into a controlled component
@@ -15,16 +14,18 @@ export default function TextArea() {
     console.log(e.target.value);
     let newText = e.target.value;
 
+    //basic validation
     // in order to prevent script tags from being entered
     if (newText.includes("<script>")) {
       setWarningText("No <script> tags allowed");
-      setshowWarning(true);
       //this replaces the script tag with an empty string
       newText = newText.replace("<script>", "");
     } else if (newText.includes("@")) {
       setWarningText("No @ symbols allowed");
-      setshowWarning(true);
       newText = newText.replace("@", "");
+    } else {
+      // makes message dissapear after we remove the @ symbol or script tag
+      setWarningText("");
     }
     setText(newText);
   };
@@ -40,7 +41,8 @@ export default function TextArea() {
         placeholder="Enter your text here"
         spellCheck="false"
       />
-      {showWarning ? <Warning warningText={warningText} /> : null}
+      {/* if warningText is not an empty string, then display the Warning component */}
+      {<Warning warningText={warningText} />}
     </div>
   );
 }
